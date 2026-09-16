@@ -1,0 +1,12 @@
+# 원본(마스킹 전) 문서는 저장소에 들어가면 안 된다
+.orig.md
+*_원본.md
+
+# 산출물 바이너리
+*.ipa
+*.mobileprovision
+*.p12
+
+# macOS / Windows
+.DS_Store
+Thumbs.db
