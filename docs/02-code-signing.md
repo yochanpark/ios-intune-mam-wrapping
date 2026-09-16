@@ -32,8 +32,8 @@ App Group은 Extension이 메인 앱과 데이터를 공유하는 유일한 통�
 **이 단계에서 겪은 시행착오**: 키체인에 동일한 이름의 인증서가 국가 코드(US/KR)만 다르게 2개 존재했고, 프로필마다 다른 인증서를 선택하면서 "프로필-인증서 불일치"로 설치가 반복 실패했습니다.
 
 ```
-Apple Development: {DEVELOPER} ({SIGNING_CERT_ID})  ← C=US
-Apple Development: {DEVELOPER} ({SIGNING_CERT_ID})  ← C=KR
+Apple Development: yochan park ({SIGNING_CERT_ID})  ← C=US
+Apple Development: yochan park ({SIGNING_CERT_ID})  ← C=KR
 ```
 
 **해결**: 프로필 생성 시 해당 이름의 인증서를 **전부 체크**하여, 어느 쪽으로 서명해도 매칭되도록 구성했습니다.

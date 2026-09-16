@@ -50,7 +50,7 @@
 | 구분 | 값 |
 |---|---|
 | Apple Developer Team | 소속사 법인 (Team ID: `{TEAM_ID}`) |
-| 서명 인증서 | Apple Development: {DEVELOPER} (`{SIGNING_CERT_ID}`) |
+| 서명 인증서 | Apple Development: yochan park (`{SIGNING_CERT_ID}`) |
 | 인증서 SHA-1 | `{SIGNING_CERT_SHA1}` |
 | Entra ID 테넌트 | 소속사 IT서비스데스크 (`{TENANT_ID}`) |
 | 테스트 계정 | {TEST_ACCOUNT} |
@@ -188,5 +188,5 @@ Extension 6개를 전부 포함한 오픈소스 Telegram 앱을 대상으로, �
 | `{TEAM_ID}` / `{SIGNING_CERT_ID}` | Apple Developer Team ID·서명 인증서 ID |
 | `{WORK_ACCOUNT}` / `{TEST_ACCOUNT}` | 관리자·테스트 계정 |
 | `{ADMIN}` | Intune 정책을 만든 관리자 계정 ID |
-| `{DEVELOPER}` | 서명 인증서에 기록된 개발자 이름 |
+| `yochan park` | 서명 인증서에 기록된 개발자 이름 |
 | `org.example.*` | 검증용 Bundle ID (수행 시점 날짜 제거) |
