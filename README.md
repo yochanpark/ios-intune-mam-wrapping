@@ -1,5 +1,12 @@
 # iOS 앱 Intune MAM Wrapping 기술 검증 작업 기록
 
+| 한눈에 | |
+|---|---|
+| 질문 | App Extension이 많은 iOS 앱을, **Extension이 살아 있는 채로** Intune App Wrapping하고 MAM 정책으로 제어할 수 있는가 (고객사 모바일 보안 PoC) |
+| 한 일 | 오픈소스 Telegram(Extension 6개)으로 App ID·Provisioning Profile 7개 발급 → 안쪽부터 바깥 순서 수동 재서명 → 실기기 크래시 2건(iCloud·Siri) 원인 규명 → Entra ID 앱 등록 → Wrapping Tool의 plist 기록 실패를 수동 주입으로 우회 → 앱 보호 정책 배포 |
+| 결과 | **가능함을 실기기로 실증** — MAM 로그인·화면 캡처 차단 등 DLP 동작 확인. 커스텀 앱은 조건부 액세스 "앱 보호 정책 필요"를 통과할 수 없는 **구조적 제약**을 규명 |
+| 기술 | iOS 코드 서명 · Entitlements · Xcode · Intune App Wrapping Tool · Microsoft Entra ID · MSAL · 조건부 액세스 |
+
 ---
 
 ## 1. 배경 및 목적
@@ -186,6 +193,7 @@ Extension 6개를 전부 포함한 오픈소스 Telegram 앱을 대상으로, �
 | `소속사` / `소속사 법인` | Apple Developer Program 계정을 보유한 소속 법인 |
 | `{TENANT_ID}` / `{CLIENT_ID}` | Entra ID 테넌트·앱 클라이언트 ID |
 | `{TEAM_ID}` / `{SIGNING_CERT_ID}` | Apple Developer Team ID·서명 인증서 ID |
+| `{SIGNING_CERT_SHA1}` | 서명 인증서 SHA-1 지문 |
 | `{WORK_ACCOUNT}` / `{TEST_ACCOUNT}` | 관리자·테스트 계정 |
 | `{ADMIN}` | Intune 정책을 만든 관리자 계정 ID |
 | `org.example.*` | 검증용 Bundle ID (수행 시점 날짜 제거) |
